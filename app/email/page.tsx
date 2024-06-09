@@ -30,9 +30,7 @@ const EmailPage = () => {
   const [emails, setEmails] = useState<EmailEntry[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [token, setToken] = useState<string | null>(
-    localStorage.getItem("token")
-  );
+  const [token, setToken] = useState<string | null>();
   const [showModal, setShowModal] = useState(false);
   const [selectedEmailBody, setSelectedEmailBody] = useState("");
   useEffect(() => {

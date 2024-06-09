@@ -79,6 +79,7 @@ const EmailPage = () => {
       body: JSON.stringify({ emails: emails, API_KEY }),
     });
     const data = await res.json();
+
     setEmails(data.messages);
     console.log("classify", data.messages);
   };
@@ -211,7 +212,7 @@ const EmailPage = () => {
             <div
               className="email-box"
               key={entry.id}
-              onClick={() => handelbody(email)}
+              onClick={() => handelbody(entry)}
             >
               <h3>{from}</h3>
               <span className={`classification ${classify.toLowerCase()}`}>
@@ -329,6 +330,7 @@ const EmailPage = () => {
 
         .modal-content {
           color: #fff;
+          max-height: 70vh;
           overflow-y: auto;
         }
 

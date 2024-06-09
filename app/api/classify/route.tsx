@@ -5,7 +5,7 @@ export const POST = async (req: NextRequest) => {
     const { emails, API_KEY } = await req.json();
     const API = API_KEY ? API_KEY : process.env.API_KEY;
     const genAI = new GoogleGenerativeAI(API);
-
+    console.log("API",API);
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     if (!emails || !Array.isArray(emails)) {
       return NextResponse.json(

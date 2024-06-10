@@ -71,6 +71,7 @@ const EmailPage = () => {
 
   const classifyMails = async () => {
     const API_KEY = localStorage.getItem("API_KEY");
+    console.log("API_KEY",API_KEY);
     const res = await fetch("/api/classify", {
       method: "POST",
       headers: {

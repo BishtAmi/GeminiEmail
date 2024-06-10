@@ -26,7 +26,8 @@ const SignIn = () => {
     router.push("/email");
   };
   const handelAPIkey = (event: any) => {
-    setApiKey(event.target.value);
+    setApiKey(event);
+    console.log("Api at sign in", apiKey);
     localStorage.setItem("API_KEY", JSON.stringify(apiKey));
   };
   if (session) {
@@ -47,7 +48,7 @@ const SignIn = () => {
             type="text"
             placeholder="Gemini API Key"
             value={apiKey}
-            onChange={handelAPIkey}
+            onChange={(event) => handelAPIkey(event?.target.value)}
           />
           <ul>
             {classifications.map((classification) => (
